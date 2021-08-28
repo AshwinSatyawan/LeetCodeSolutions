@@ -1,0 +1,35 @@
+  
+Given an array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number.
+
+Return the indices of the two numbers (1-indexed) as an integer array answer of size 2, where 1 <= answer[0] < answer[1] <= numbers.length.
+  
+solution:  
+  
+  public int[] twoSum(int[] numbers, int target) {
+      
+       if(numbers.length == 0)
+       return new int[]{-1,-1};
+ 
+       int left = 0;
+       int right = numbers.length-1;
+        
+        while(left < right)
+        {
+            int sum = numbers[left]+numbers[right];
+            
+            if(sum == target)
+            {
+                return new int[]{left+1,right+1};
+            }
+            
+            if(sum < target)
+            {
+                left++;
+            }
+            else
+            {
+                right--;
+            }
+        }
+        return new int[]{-1,-1};
+    }
