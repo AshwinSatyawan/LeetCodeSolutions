@@ -1,0 +1,34 @@
+//Heres a Brute Force solution with o(n^2) complexity but good for a basic understanding of the problem.
+
+for(int i = 0;i<nums.length;i++)
+        {
+            for(int j=i+1;j<nums.length;j++)
+            {
+                int compliment = target - nums[i];
+
+                if(nums[j] == comp)
+                {
+                    return new int[] {i,j};
+                }
+            }
+        }
+//which again is slow so we use hashmap to speed it up also this introduces space complexity so keep that in mind
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+       
+      Map<Integer,Integer> num_map = new HashMap<>();
+        
+      for(int i = 0;i<nums.length;i++)
+      {
+         int  complement = target - nums[i];
+          
+          if(num_map.containsKey(complement))
+          {
+              return new int[]{num_map.get(complement),i};
+          }
+          num_map.put(nums[i],i);
+      }
+        return new int[]{};
+    }
+}
