@@ -20,8 +20,8 @@ Return k after placing the final result in the first k slots of nums.
 	     i           j
 
 class Solution {
-    public int removeDuplicates(int[] nums) {
-        
+    public int removeDuplicates(int[] nums) 
+    {    
     int i = 0; 
     for(int j = 1;j<nums.length;j++)
     {
@@ -30,8 +30,6 @@ class Solution {
             nums[++i] = nums[j];
         }
     }
-        return i+1;
-        
-        
+        return i+1;     
     }
 }
